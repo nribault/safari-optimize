@@ -118,6 +118,7 @@ fi
 if command -v mas &>/dev/null; then
   install_extension "AdGuard for Safari" 1440147259
   install_extension "Hush"               1544743900
+  install_extension "Signal Spam"        1481192110
   echo "ℹ️  Activer les extensions : Safari > Réglages > Extensions"
 fi
 

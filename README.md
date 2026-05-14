@@ -29,6 +29,7 @@ Applique des réglages de **confidentialité**, de **sécurité** et de **perfor
 **Extensions Safari** (installation automatique via Mac App Store)
 - [AdGuard for Safari](https://adguard.com/fr/adguard-safari/overview.html) — bloqueur de publicités et de traceurs
 - [Hush](https://oblador.github.io/hush/) — suppression des bandeaux de consentement cookies
+- [Signal Spam](https://www.signal-spam.fr) — avertissement et signalement d'URLs malveillantes (base française, CNIL)
 
 **Automatisation**
 - Installation automatique de [Homebrew](https://brew.sh) si absent
