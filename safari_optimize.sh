@@ -56,6 +56,27 @@ defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
 # Ne pas ouvrir automatiquement les fichiers téléchargés
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
+# Caméra et microphone : demander par site (1=ask) — ne pas mettre 0 (deny)
+# pour conserver la compatibilité avec les clients web 3CX et Microsoft Teams
+defaults write com.apple.Safari SafariCameraPermissionPolicy -int 1
+defaults write com.apple.Safari SafariMicrophonePermissionPolicy -int 1
+
+# Envoyer l'en-tête Do Not Track
+defaults write com.apple.Safari SendDoNotTrackHTTPHeader -bool true
+
+# --- Historique ---
+
+# Limiter l'historique à 30 jours
+defaults write com.apple.Safari HistoryAgeInDaysLimit -int 30
+
+# --- Expérience utilisateur ---
+
+# Activer le mode Lecteur automatiquement sur les articles
+defaults write com.apple.Safari ReaderModeWhenAvailableEnabled -bool true
+
+# Afficher la barre d'état (URL au survol des liens)
+defaults write com.apple.Safari ShowOverlayStatusBar -bool true
+
 # --- Extensions Safari via mas ---
 
 install_extension() {
