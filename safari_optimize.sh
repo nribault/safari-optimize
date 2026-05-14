@@ -37,10 +37,6 @@ defaults write com.apple.Safari BlockStoragePolicy -int 2
 
 # --- Performances ---
 
-# Désactiver l'ouverture automatique des pop-ups JavaScript
-defaults write com.apple.Safari WebKitJavaScriptCanOpenWindowsAutomatically -bool false
-defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaScriptCanOpenWindowsAutomatically -bool false
-
 # Désactiver le préchargement de la page d'accueil (réduit la consommation réseau)
 defaults write com.apple.Safari PreloadTopHit -bool false
 
