@@ -56,6 +56,36 @@ defaults write com.apple.Safari WarnAboutFraudulentWebsites -bool true
 # Ne pas ouvrir automatiquement les fichiers téléchargés
 defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
+# --- Extensions Safari via mas ---
+
+install_extension() {
+  local name="$1"
+  local app_id="$2"
+
+  if mas list | grep -q "^$app_id"; then
+    echo "✅ $name déjà installé"
+  else
+    echo "📦 Installation de $name..."
+    mas install "$app_id" && echo "✅ $name installé" || echo "⚠️  Échec installation $name (vérifier l'App Store)"
+  fi
+}
+
+if ! command -v mas &>/dev/null; then
+  if command -v brew &>/dev/null; then
+    echo "📦 Installation de mas (Mac App Store CLI)..."
+    brew install mas
+  else
+    echo "⚠️  Homebrew introuvable — mas non installé. Extensions ignorées."
+    echo "   Installer Homebrew : https://brew.sh"
+  fi
+fi
+
+if command -v mas &>/dev/null; then
+  install_extension "AdGuard for Safari" 1440147259
+  install_extension "Hush"               1544743900
+  echo "ℹ️  Activer les extensions : Safari > Réglages > Extensions"
+fi
+
 # --- Redémarrage propre de Safari ---
 if pgrep -x Safari &>/dev/null; then
   echo "🔄 Fermeture propre de Safari..."
