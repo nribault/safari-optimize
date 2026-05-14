@@ -12,7 +12,9 @@ fi
 echo "🔍 macOS $OS_VERSION détecté"
 
 # Sauvegarde des valeurs existantes
-BACKUP_FILE="$HOME/.safari_defaults_backup_$(date +%Y%m%d_%H%M%S).plist"
+BACKUP_DIR="$HOME/.safari-optimize/backups"
+mkdir -p "$BACKUP_DIR"
+BACKUP_FILE="$BACKUP_DIR/safari_defaults_$(date +%Y%m%d_%H%M%S).plist"
 defaults export com.apple.Safari "$BACKUP_FILE" 2>/dev/null \
   && echo "💾 Sauvegarde créée : $BACKUP_FILE" \
   || echo "⚠️  Impossible de créer une sauvegarde (Safari jamais lancé ?)"

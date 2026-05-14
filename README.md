@@ -59,8 +59,10 @@ Après exécution, **activer les extensions manuellement** : Safari > Réglages 
 
 ## Rollback
 
+Les sauvegardes sont stockées dans `~/.safari-optimize/backups/`.
+
 ```bash
-defaults import com.apple.Safari ~/.safari_defaults_backup_<timestamp>.plist
+defaults import com.apple.Safari ~/.safari-optimize/backups/safari_defaults_<timestamp>.plist
 ```
 
 Le chemin exact du fichier de sauvegarde est affiché à la fin de chaque exécution.
