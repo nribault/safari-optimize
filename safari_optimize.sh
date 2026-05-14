@@ -66,7 +66,13 @@ install_extension() {
     echo "✅ $name déjà installé"
   else
     echo "📦 Installation de $name..."
-    mas install "$app_id" && echo "✅ $name installé" || echo "⚠️  Échec installation $name (vérifier l'App Store)"
+    if mas install "$app_id" 2>&1; then
+      echo "✅ $name installé"
+    else
+      echo "⚠️  Échec installation $name"
+      echo "   → Ouvrir l'App Store, chercher \"$name\", cliquer Obtenir, puis relancer ce script."
+      echo "   → Lien direct : https://apps.apple.com/app/id$app_id"
+    fi
   fi
 }
 
