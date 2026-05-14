@@ -70,13 +70,23 @@ install_extension() {
   fi
 }
 
+if ! command -v brew &>/dev/null; then
+  echo "📦 Installation de Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  # Charger brew dans le PATH selon l'architecture (Apple Silicon vs Intel)
+  if [[ -x /opt/homebrew/bin/brew ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [[ -x /usr/local/bin/brew ]]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+  fi
+fi
+
 if ! command -v mas &>/dev/null; then
   if command -v brew &>/dev/null; then
     echo "📦 Installation de mas (Mac App Store CLI)..."
     brew install mas
   else
-    echo "⚠️  Homebrew introuvable — mas non installé. Extensions ignorées."
-    echo "   Installer Homebrew : https://brew.sh"
+    echo "⚠️  Homebrew introuvable après installation — extensions ignorées."
   fi
 fi
 
