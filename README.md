@@ -6,17 +6,24 @@ Applique des réglages de **confidentialité**, de **sécurité** et de **perfor
 
 ## Fonctionnalités
 
-**Confidentialité & Sécurité**
+**Confidentialité**
 - Bloque les cookies tiers et le stockage des traceurs (ITP)
 - Désactive la géolocalisation automatique
+- Caméra et microphone : demande par site (compatible clients web 3CX et Teams)
 - Désactive les suggestions de recherche universelle Apple
 - Force DuckDuckGo comme moteur de recherche
-- Désactive l'ouverture automatique des téléchargements
-- Active les avertissements de sites frauduleux
+- Envoie l'en-tête Do Not Track
+- Limite l'historique à 30 jours
 - Affiche l'URL complète dans la barre d'adresse
 
-**Performances**
-- Désactive l'ouverture automatique des pop-ups JavaScript
+**Sécurité**
+- Désactive l'ouverture automatique des téléchargements
+- Active les avertissements de sites frauduleux
+- Pop-ups : comportement natif Safari "Bloquer et notifier" (l'utilisateur peut autoriser à la demande)
+
+**Expérience utilisateur**
+- Mode Lecteur activé automatiquement sur les articles
+- Affichage de la barre d'état (URL au survol des liens)
 - Désactive le préchargement réseau de la page d'accueil
 
 **Extensions Safari** (installation automatique via Mac App Store)
@@ -65,14 +72,19 @@ Le chemin exact du fichier de sauvegarde est affiché à la fin de chaque exécu
 | `WebKitPreferences.storageBlockingPolicy` | `1` | Bloque le stockage des traceurs (ITP) |
 | `BlockStoragePolicy` | `2` | Bloque les cookies tiers en navigation privée |
 | `SafariGeolocationPermissionPolicy` | `0` | Désactive la géolocalisation automatique |
+| `SafariCameraPermissionPolicy` | `1` | Caméra : demander par site |
+| `SafariMicrophonePermissionPolicy` | `1` | Microphone : demander par site |
+| `SendDoNotTrackHTTPHeader` | `true` | Envoie l'en-tête Do Not Track |
+| `HistoryAgeInDaysLimit` | `30` | Historique limité à 30 jours |
 | `UniversalSearchEnabled` | `false` | Désactive la recherche universelle Apple |
 | `SuppressSearchSuggestions` | `true` | Désactive les suggestions dans la barre d'adresse |
 | `ShowFullURLInSmartSearchField` | `true` | Affiche l'URL complète |
-| `WebKitJavaScriptCanOpenWindowsAutomatically` | `false` | Bloque les popups JS |
 | `PreloadTopHit` | `false` | Désactive le préchargement réseau |
 | `SearchProviderIdentifier` | `com.duckduckgo` | Moteur de recherche DuckDuckGo |
 | `WarnAboutFraudulentWebsites` | `true` | Avertissement sites frauduleux |
 | `AutoOpenSafeDownloads` | `false` | Désactive l'ouverture auto des téléchargements |
+| `ReaderModeWhenAvailableEnabled` | `true` | Mode Lecteur automatique |
+| `ShowOverlayStatusBar` | `true` | Barre d'état (URL au survol) |
 
 ## Licence
 
